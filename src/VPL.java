@@ -17,7 +17,7 @@ public class VPL {
         keys = new Scanner(System.in);
 
         System.out.println("Usage: java VPL <vpl program> <memory size> <'debug'?>");
-        fileName = "code.vpl";
+        fileName = "sept17.vpl";
         max = 10000;
         debugMode = false;
         if (args.length == 0) {
@@ -138,6 +138,7 @@ public class VPL {
                 System.out.println("--------------------------");
                 System.out.println("Step of execution with IP = " + ip + " opcode: "
                         + mem[ip]
+                        + " gp = " + gp
                         + " bp = " + bp + " sp = " + sp + " hp = " + hp + " rv = " + rv);
                 System.out.println(" chunk of code: " + mem[ip] + " "
                         + mem[ip + 1] + " " + mem[ip + 2] + " " + mem[ip + 3]);

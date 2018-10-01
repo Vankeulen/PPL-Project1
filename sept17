@@ -1,0 +1,77 @@
+/* ask the user for n,
+   create in an array the
+   first n fibonacci numbers
+   (1,1,2,3,5,8,...)
+  total them up and display
+*/
+
+Keys -> n
+
+Fib n -> array
+
+PutList array -> .
+
+/* forgot this on Sept. 17, 
+  caused weird behavior,
+  running into the next function?!
+*/
+Halt
+
+/* given n, 
+   create a heap array with n+1 spaces,
+   store n in space 0,
+   compute fib numbers and store them in
+   spaces 1, 2, ... n
+  Return starting index of the array
+*/
+
+Def Fib n .
+
+Add n 1 -> size
+New size -> array
+
+/* forgot this on Sept. 17---
+   have to store n at 
+   offset 0 
+*/
+n -> Put array 0
+
+0 -> temp1
+1 -> temp2
+
+1 -> k
+
+top:
+  Less n k -> Jmp exit:
+  Add temp1 temp2 -> temp
+  temp -> Put array k
+  temp2 -> temp1
+  Get array k -> temp2
+
+  Add k 1 -> k
+
+  Jmp top:
+exit:
+
+array -> Ret
+
+/*--------------------------------------*/
+Def PutList list .
+
+0 -> index             /* get size of list */
+Get list index -> size
+
+1 -> index
+
+top:
+
+  Less size index -> Jmp exit:
+     Get list index -> value
+     value -> Prt   32 -> Sym
+     Add index 1 -> index
+
+   Jmp top:
+exit:
+
+0 -> Ret
+
