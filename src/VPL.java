@@ -17,7 +17,7 @@ public class VPL {
         keys = new Scanner(System.in);
 
         System.out.println("Usage: java VPL <vpl program> <memory size> <'debug'?>");
-        fileName = "sept17.vpl";
+        fileName = "code.vpl";
         max = 10000;
         debugMode = false;
         if (args.length == 0) {
